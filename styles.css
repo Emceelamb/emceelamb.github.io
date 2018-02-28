@@ -110,9 +110,9 @@ button.button {
     display: flex;
     position: fixed;
     width: 100%;
-    justify-content: right;
+    /* justify-content: right; */
     top: 85%;
-    right: 25px;
+    /* right: 25px; */
     color: #800000;
 }
 
