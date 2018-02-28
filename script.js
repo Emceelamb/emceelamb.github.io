@@ -14,7 +14,7 @@ let projects = [
   {
     title: "HTML E-mail",
     info: "An HTML email invitation for a College of Environmental Design event.",
-    imgurl: "https://markofthelam.com/2017/02/15/ehdd-ced-invite/",
+    imgurl: "https://markofthelam.com/wp-content/uploads/2017/02/ehdd.jpg",
     link:"https://markofthelam.com/2017/12/05/news-headlines/"
   },
   {
