@@ -1,0 +1,209 @@
+#social {
+    list-style: none;
+}
+
+.social-link {
+    display: inline;
+    padding-right: 25px;
+    font-size: Apx;
+    font-weight: 600;
+}
+
+body {
+    font-family: 'Merriweather', serif;
+
+}
+
+.header {
+    padding: 50px 0px 50px 0;
+}
+
+.section {
+    padding-top: 50px;
+}
+
+h3.section-title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: #333;
+    /* old IE */
+    background-color: #333;
+    /* Modern Browsers */
+}
+
+ul.work {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+li.work-item {
+    font-size: 28px;
+    line-height: 80px;
+    /* text-decoration:underline; */
+}
+
+li.work-item span {
+    /* border-bottom:1px dashed  #000; */
+    transition: 2s;
+    background: linear-gradient(to right, currentColor 100%, currentColor 50%, transparent 50%, transparent 00%) repeat-x left bottom;
+    background-size: 60px 1px;
+    -moz-animation: 2s;
+    -o-animation: 2s;
+    transition-duration: 2s;
+    opacity: 100%;
+
+    transition-property: opacity;
+}
+
+li.work-item:hover span {
+    border-bottom: 0px none #000;
+    transition-property: opacity;
+    transition: opacity 2s;
+    -webkit-animation: 2s;
+    -moz-animation: 2s;
+    -o-animation: 2s;
+    opacity: 0%;
+    transition: text-decoration 0.5s linear;
+    -moz-transition: opacity 0.5s linear;
+    /* Firefox 4 */
+    -webkit-transition: background-color 0.5s linear;
+    /* Safari and Chrome */
+    -o-transition: background-color 0.5s linear;
+    /* Opera */
+    -ms-transition: background-color 0.5s linear;
+    /* Explorer 10 */
+    /* background:#ff0000; */
+}
+
+input#subject {
+    border-radius: unset;
+}
+
+input#emailIn {
+    border-radius: unset;
+
+}
+
+textarea {
+    border-radius: unset;
+
+}
+
+button.button {
+    border-radius: unset;
+
+}
+
+.contact {
+    font-weight: 600;
+    float: right;
+    font-size: 32px;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    justify-content: right;
+    top: 85%;
+    right: 25px;
+    color: #800000;
+}
+
+.modal-mask {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: table;
+    transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.modal-container {
+    /* filter:unset; */
+    width: 300px;
+    margin: 0px auto;
+    padding: 20px 30px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+    transition: all .3s ease;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.modal-header h3 {
+    margin-top: 0;
+    color: black;
+    text-decoration: underline;
+    font-family: 'Merriweather', serif;
+
+}
+
+.modal-body {
+    margin: 20px 0;
+}
+
+.modal-default-button {
+    float: right;
+}
+
+.modal-enter {
+    opacity: 0;
+}
+
+.modal-leave-active {
+    opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.bk {
+    transition: all 0.05s ease-out;
+}
+
+.blur {
+    filter: blur(5px);
+    opacity: 0.4;
+}
+
+a {
+    color: rgba(0, 0, 0, 1);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+    transition: .3s;
+}
+
+a:hover {
+    color: rgba(0, 0, 0, .75);
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+    transition: .3s;
+}
+
+a.contact {
+    color: maroon;
+    border-bottom: unset;
+    transition: .3s;
+}
+
+a.contact:hover {
+    color: black;
+    transition: .3s;
+}

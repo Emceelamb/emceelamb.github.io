@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Mark Lam</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div id="portfolio">
+        <div class="contact" v-bind:class="[isShowing ? blurClass : '', bkClass]">
+            <a class="contact" href="mailto:mark@markofthelam.com">contact</a>
+
+        </div>
+
+        <!-- info modal -->
+        <info-modal v-if="showModal2" @close="showModal2 = false; toggleShow()">
+            <h3 slot="header">Info</h3>
+            <p slot="body">As a transdisciplinary artist, I experiment with interactive technology and traditional handcraft. My practice seeks to disrupt the notion that there is a place for everything and everything is in its place[1]. I draw on media studies and critical theory to reify art in technology. More simply put: if the Medium is the Message[2], what is the Message and how can I reinterpret it?</p>
+        </info-modal>
+
+        <!-- Projects modal -->
+        <modal @close="toggleShow();"></modal>
+
+        <div class="container" v-bind:class="[isShowing ? blurClass : '', bkClass]">
+            <div class="row header">
+                <div class="twelve columns">
+                    <h1>My name is Mark Lam.
+                        <br/> Sometimes I make things...</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                    <ul id="social">
+                        <li class="social-link">
+                            <a id="show-modal" @click="showModal2 = true; toggleShow()">Info</a>
+
+                        </li>
+
+                        <li class="social-link">
+                            <a href="https://markofthelam.com" target="_blank">Website</a</li>
+                                <li class="social-link">
+                                    <a href="https://www.linkedin.com/in/markofthelam" target="_blank">LinkedIn</a>
+                                </li>
+                                <li class="social-link">
+                                    <a href="https://www.instagram.com/emceelamb/" target="_blank">Instagram</a>
+                                </li>
+                                <li class="social-link">
+                                    <a href="https://github.com/emceelamb/" target="_blank">Github</a>
+                                </li>
+                    </ul>
+                    <!-- <info-modal v-if="showModal2" @close="showModal2=false"></info-modal> -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                    <div class="section">
+                        <h3 class="section-title">Things</h3>
+                        <hr />
+                        <ul class="work">
+                            <li v-for="project in projects" class="work-item">
+                                <a @click="openModal(project);toggleShow() " @keyup.esc="closeModal(); ">{{ project.title}}</a>
+                            </li>
+
+                        </ul>
+                        <hr/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script type="text/x-template" id="project-template">
+        <transition name = "modal">
+            <div class="modal-mask" v-if="active" @click="close();">
+                <div class="modal-wrapper">
+                    <div class="modal-container" style="padding-bottom:55px">
+                        <div class="modal-header">
+                            <h3>{{ project.title }}</h3>
+                        </div>
+                        <div class="modal-body">
+                            <img width="100%" :src= "project.imgurl">
+                            <p>{{project.info}}</p>
+                            <button  class="modal-default-button" @click="$emit('close'); toggleShow()" >
+                                    OK
+                                </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </transition>
+    </script>
+
+    <script type="text/x-template" id="info-template">
+  <transition name="modal">
+    <div class="modal-mask">
+      <div class="modal-wrapper">
+        <div class="modal-container">
+
+          <div class="modal-header">
+            <slot name="header">
+              default header
+            </slot>
+          </div>
+
+          <div class="modal-body" style="padding-bottom:25px" >
+            <slot name="body">
+              default body
+            </slot>
+            <button  class="modal-default-button" @click="$emit('close')">
+                OK
+            </button>
+        </div>
+        
+        
+          
+        </div>
+      </div>
+    </div>
+  </transition>
+</script>
+
+
+
+    <script type="text/x-template" id="modal-template">
+        <transition name="modal">
+          <div class="modal-mask">
+            <div class="modal-wrapper">
+              <div class="modal-container">
+      
+                <div class="modal-header">
+                  <slot name="header">
+                    default header
+                  </slot>
+                </div>
+      
+                <div class="modal-body">
+                  <slot name="body">
+                    default body
+                  </slot>
+                </div>
+      
+                <div class="modal-footer">
+                  <slot name="footer">
+                    <button class="modal-default-button" @click="$emit('close')">
+                      OK
+                    </button>
+                  </slot>
+                </div>
+              </div>
+            </div>
+          </div>
+        </transition>
+      </script>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
