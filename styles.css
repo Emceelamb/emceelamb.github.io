@@ -5,7 +5,7 @@
 .social-link {
     display: inline;
     padding-right: 25px;
-    font-size: Apx;
+    font-size: 16px;
     font-weight: 600;
 }
 
@@ -104,16 +104,17 @@ button.button {
 }
 
 .contact {
-    font-weight: 600;
-    float: right;
-    font-size: 32px;
-    display: flex;
-    position: fixed;
-    width: 100%;
+    /* font-weight: 600; */
+    /* float: right; */
+    font-size: 16px;
+    /* display: flex; */
+    /* position: fixed; */
+    /* width: 100%; */
     /* justify-content: right; */
-    top: 85%;
+    /* top: 85%; */
     /* right: 25px; */
     color: #800000;
+    border-bottom: 1px solid;
 }
 
 .modal-mask {
@@ -199,7 +200,7 @@ a:hover {
 
 a.contact {
     color: maroon;
-    border-bottom: unset;
+    /* border-bottom: unset; */
     transition: .3s;
 }
 
