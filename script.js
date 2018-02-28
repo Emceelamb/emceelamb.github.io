@@ -6,28 +6,40 @@ let projects = [
     link:"https://markofthelam.com/2017/12/05/news-headlines/"
   },
   {
-    title: "item 2",
-    info: "bla bla bla"
+    title: "Too Little Too Late",
+    info: "This is an anonymous apology board built with Django.",
+    imgurl: "https://markofthelam.com/wp-content/uploads/2017/08/2l2l-1.gif",
+    link:"https://markofthelam.com/2017/12/05/news-headlines/"
   },
   {
-    title: "item 3",
-    info: "bla bla bla"
+    title: "HTML E-mail",
+    info: "An HTML email invitation for a College of Environmental Design event.",
+    imgurl: "https://markofthelam.com/2017/02/15/ehdd-ced-invite/",
+    link:"https://markofthelam.com/2017/12/05/news-headlines/"
   },
   {
-    title: "item 4",
-    info: "bla bla bla"
+    title: "ICG Website",
+    info: "I developed this website on Wordpress as well as the content writing.",
+    imgurl: "https://markofthelam.com/wp-content/uploads/2018/02/icg.png",
+    link:"https://markofthelam.com/2017/12/05/news-headlines/"
   },
   {
-    title: "item 5",
-    info: "bla bla bla"
+    title: "Vietnamese Diaspora",
+    info: "Data visualization of the Vietnamese Refugee Crisis in America using D3.js.",
+    imgurl: "https://markofthelam.com/wp-content/uploads/2017/08/diasporagraph-1.gif",
+    link:"https://markofthelam.com/2017/12/05/news-headlines/"
   },
   {
-    title: "item 6",
-    info: "bla bla bla"
+    title: "Arduino heart",
+    info: "A beating heart using an Arduino and servomotor. It is activated by heat.",
+    imgurl: "https://markofthelam.com/wp-content/uploads/2017/03/beatingheart.jpg",
+    link: ""
   },
   {
-    title: "item 7",
-    info: "bla bla bla"
+    title: "Multi-Channel Projection",
+    info: "Three web cameras are projection mapped to a cube.",
+    imgurl: "https://markofthelam.com/wp-content/uploads/2017/03/3cam.gif",
+    link: ""
   }
 ];
 
