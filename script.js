@@ -61,14 +61,22 @@ Vue.component("modal", {
     },
     close: function() {
       this.active = false;
-      this.isShowing=false;
+      this.isShowing = false;
+      console.log(this.isShowing, "close");
+      this.toggleShow();
+    },
+    toggleShow: function(){
+      console.log(this.isShowing);
+      this.isShowing = !this.isShowing;
+      console.log(this.isShowing, "toggle");
     }
   },
   mounted: function() {
     this.$nextTick(
       function() {
         portfolio.$on("open-modal", this.open);
-        // portfolio.$on("close-modal", this.close);
+        portfolio.$on("close-modal", this.close);
+        portfolio.$on("toggle-show", this.toggleShow);
       }.bind(this)
     );
   }
@@ -102,6 +110,7 @@ const portfolio = new Vue({
     },
     closeModal: function() {
       portfolio.$emit("close-modal");
+      portfolio.$emit("toggle-show");
       toggleShow();
       isShowing = false;
     },

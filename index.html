@@ -29,7 +29,7 @@
         </info-modal>
 
         <!-- Projects modal -->
-        <modal @close="toggleShow();"></modal>
+        <modal @close="isShowing=false" @open="isShowing = true;"></modal>
 
         <div class="container" v-bind:class="[isShowing ? blurClass : '', bkClass]">
             <div class="row header">
@@ -86,7 +86,7 @@
 
     <script type="text/x-template" id="project-template">
         <transition name = "modal">
-            <div class="modal-mask" v-if="active" @click="close();">
+            <div class="modal-mask" v-if="active" >
                 <div class="modal-wrapper">
                     <div class="modal-container" style="padding-bottom:55px">
                         <div class="modal-header">
@@ -95,7 +95,7 @@
                         <div class="modal-body">
                             <img width="100%" :src= "project.imgurl">
                             <p>{{project.info}}</p>
-                            <button  class="modal-default-button" @click="$emit('close'); toggleShow()" >
+                            <button  class="modal-default-button" @click="$emit('close'); toggleShow(); close()" >
                                     OK
                                 </button>
                         </div>
